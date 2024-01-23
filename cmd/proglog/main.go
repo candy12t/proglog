@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/candy12t/proglog/internal/server"
+)
 
 func main() {
-	fmt.Println("Hello, world")
+	srv := server.NewHTTPServer(":8080")
+	log.Fatal(srv.ListenAndServe())
 }
